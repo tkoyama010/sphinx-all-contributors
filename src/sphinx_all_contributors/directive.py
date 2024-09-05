@@ -1,7 +1,9 @@
-from docutils import nodes
-from docutils.parsers.rst import Directive
 import json
 import os
+
+from docutils import nodes
+from docutils.parsers.rst import Directive
+
 
 class AllContributorsDirective(Directive):
     # Allow one optional argument for the relative path
@@ -14,20 +16,25 @@ class AllContributorsDirective(Directive):
         srcdir = env.srcdir
 
         # Get the path from the argument or default to .all-contributorsrc
-        relative_path = self.arguments[0] if self.arguments else '.all-contributorsrc'
+        relative_path = self.arguments[0] if self.arguments else ".all-contributorsrc"
         contributors_file = os.path.join(srcdir, relative_path)
 
         if not os.path.exists(contributors_file):
-            return [nodes.error(None, nodes.paragraph(text=f"Error: {relative_path} file not found."))]
+            return [
+                nodes.error(
+                    None,
+                    nodes.paragraph(text=f"Error: {relative_path} file not found."),
+                )
+            ]
 
-        with open(contributors_file, 'r', encoding='utf-8') as f:
+        with open(contributors_file, encoding="utf-8") as f:
             all_contributors = json.load(f)
 
         contributors_list = []
 
-        for contributor in all_contributors.get('contributors', []):
-            name = contributor.get('name', 'Unknown Contributor')
-            contributions = ', '.join(contributor.get('contributions', []))
+        for contributor in all_contributors.get("contributors", []):
+            name = contributor.get("name", "Unknown Contributor")
+            contributions = ", ".join(contributor.get("contributions", []))
             contributors_list.append(f"- {name} {contributions}")
 
         # Join the list items with newlines
