@@ -1,0 +1,27 @@
+name: "Pull Request Labeler"
+on:
+  pull_request_target:
+    types: [opened, reopened]
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  labeler:
+    permissions:
+      contents: read
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/labeler@v5
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          sync-labels: true
+          configuration-path: .github/labeler.yml
+          dot: true
+      - uses: actions-ecosystem/action-add-labels@v1
+        if: github.actor == 'dependabot[bot]' || github.actor == 'github-actions[bot]' ||  github.actor == 'pre-commit-ci[bot]'
+        with:
+          github_token: "${{ secrets.GITHUB_TOKEN }}"
+          labels: ignore-for-release
