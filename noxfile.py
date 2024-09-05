@@ -1,0 +1,1 @@
+"""Automation tasks for Nox."""
