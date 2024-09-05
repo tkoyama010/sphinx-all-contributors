@@ -22,8 +22,5 @@ testpaths = [
 target-version = "py312"
 
 [tool.ruff.lint]
-extend-select = [
-  "B", # flake8-bugbear
-  "I", # isort
-  "UP" # pyupgrade
-]
+extend-select = ["ALL"]
+ignore = ["COM812", "D203", "D212", "ISC001"]

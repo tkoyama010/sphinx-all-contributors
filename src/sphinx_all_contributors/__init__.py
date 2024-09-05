@@ -1,7 +1,12 @@
+"""Sphinx extension for All Contributors."""
+
+from sphinx.application import Sphinx
+
 from .directive import AllContributorsDirective
 
 
-def setup(app):
+def setup(app: Sphinx) -> dict[str, str | bool]:
+    """Set up the extension."""
     app.add_directive("all-contributors", AllContributorsDirective)
     return {
         "version": "0.0.dev0",
