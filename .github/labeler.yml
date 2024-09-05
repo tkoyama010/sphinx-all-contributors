@@ -1,0 +1,26 @@
+documentation:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file: "*.md"
+          - any-glob-to-any-file: "*.rst"
+          - any-glob-to-any-file: "docs/**/*"
+          - any-glob-to-any-file: "examples/**/*"
+maintenance:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file: ".github/**/*"
+          - any-glob-to-any-file: ".pre-commit-config.yaml"
+          - any-glob-to-any-file: "Makefile"
+          - any-glob-to-any-file: "codecov.yml"
+          - any-glob-to-any-file: "pyproject.toml"
+dependencies:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file: ".pre-commit-config.yaml"
+          - any-glob-to-any-file: "environment.yml"
+          - any-glob-to-any-file: "requirements*"
+docker:
+  - any:
+      - changed-files:
+          - any-glob-to-any-file: ".dockerignore"
+          - any-glob-to-any-file: "docker/**/*"
