@@ -96,7 +96,3 @@ repos:
     rev: v0.23.1
     hooks:
       - id: toml-sort-fix
-  - repo: https://github.com/tillig/json-sort-cli
-    rev: v1.0.0
-    hooks:
-      - id: json-sort
