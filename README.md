@@ -18,11 +18,10 @@
 
 ## Installation
 
-1. Clone or download this repository.
-1. Install the package by running:
+[![pypi](https://img.shields.io/pypi/v/sphinx-all-contributors?label=pypi&logo=python&logoColor=white)](https://pypi.org/project/sphinx-all-contributors/)
 
-```bash
-pip install .
+```shell
+pip install sphinx-all-contributors
 ```
 
 ## Usage
