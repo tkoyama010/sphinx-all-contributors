@@ -6,8 +6,8 @@
 `sphinx-all-contributors` is a Sphinx extension that allows you to easily display a list of contributors from a `.all-contributorsrc` file in your Sphinx documentation. The list is generated in a simple, readable format like:
 
 ```
-- Contributor Name 1 - ideas, docs
-- Contributor Name 2 - code
+- Contributor Name 1 for ideas, docs
+- Contributor Name 2 for code
 ```
 
 ## Features
