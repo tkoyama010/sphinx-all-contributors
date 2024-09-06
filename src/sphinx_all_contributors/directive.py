@@ -38,9 +38,9 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
         # Create a bullet list node
         list_node = nodes.bullet_list()
 
-        for contributor in all_contributors.get('contributors', []):
-            name = contributor.get('name', 'Unknown Contributor')
-            contributions = ', '.join(contributor.get('contributions', []))
+        for contributor in all_contributors.get("contributors", []):
+            name = contributor.get("name", "Unknown Contributor")
+            contributions = ", ".join(contributor.get("contributions", []))
             list_item_content = f"{name} for {contributions}"
 
             # Create a list item node
