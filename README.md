@@ -27,7 +27,7 @@ pip install .
 
 ## Usage
 
-1. Add `sphinx-all-contributors` to the `extensions` list in your `conf.py`:
+Add `sphinx-all-contributors` to the `extensions` list in your `conf.py`:
 
 ```python
 # conf.py
@@ -37,7 +37,7 @@ extensions = [
 ]
 ```
 
-1. Create a `.all-contributorsrc` file in your documentation source directory (or another location). You can create this file manually following the [all-contributors](https://allcontributors.org/docs/en/format/specification) format, or you can use the [all-contributors bot](https://allcontributors.org/docs/en/bot/overview) to automate this process and ensure that your contributor data is accurate and up-to-date. An example `.all-contributorsrc` file looks like this:
+Create a `.all-contributorsrc` file in your documentation source directory (or another location). You can create this file manually following the [all-contributors](https://allcontributors.org/docs/en/format/specification) format, or you can use the [all-contributors bot](https://allcontributors.org/docs/en/bot/overview) to automate this process and ensure that your contributor data is accurate and up-to-date. An example `.all-contributorsrc` file looks like this:
 
 ```json
 {
@@ -54,7 +54,7 @@ extensions = [
 }
 ```
 
-1. In your `.rst` file, use the `all-contributors` directive to display the list of contributors. You can specify the relative path to the `.all-contributorsrc` file or omit it to use the default path (`.all-contributorsrc` in the source directory).
+In your `.rst` file, use the `all-contributors` directive to display the list of contributors. You can specify the relative path to the `.all-contributorsrc` file or omit it to use the default path (`.all-contributorsrc` in the source directory).
 
 Example 1: Using the default `.all-contributorsrc` path:
 
@@ -68,7 +68,7 @@ Example 2: Specifying a relative path to the `.all-contributorsrc` file:
 .. all-contributors:: config/.all-contributorsrc
 ```
 
-1. Build your documentation:
+Build your documentation:
 
 ```bash
 make html
@@ -80,21 +80,3 @@ The generated HTML (or other formats) will contain a list of contributors in the
 - Contributor Name 1 - ideas, docs
 - Contributor Name 2 - code
 ```
-
-## Customization
-
-You can specify a relative path to the `.all-contributorsrc` file if it is not located in the source directory. The directive will automatically handle this and output the list from the specified file.
-
-For example:
-
-```rst
-.. all-contributors:: path/to/.all-contributorsrc
-```
-
-## Contributing
-
-If you encounter any issues or have suggestions for improvements, feel free to open an issue or a pull request on this repository.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
