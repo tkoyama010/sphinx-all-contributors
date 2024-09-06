@@ -1,6 +1,14 @@
 [build-system]
-requires = ["scikit-build-core"]
-build-backend = "scikit_build_core.build"
+requires = ['setuptools<69.0.4']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = "sphinx-all-contributors"
+requires-python = '>=3.12'
+version = "0.1.dev0"
+dependencies = [
+  'poetry-core>=1.0.0'
+]
 
 [tool.mypy]
 ignore_missing_imports = true
@@ -18,12 +26,6 @@ testpaths = [
   "tests"
 ]
 
-[tool.ruff]
-target-version = "py312"
-
 [tool.ruff.lint]
-extend-select = [
-  "B", # flake8-bugbear
-  "I", # isort
-  "UP" # pyupgrade
-]
+extend-select = ["ALL"]
+ignore = ["COM812", "D203", "D212", "ISC001"]
