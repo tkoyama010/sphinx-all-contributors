@@ -35,15 +35,20 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
         with Path(contributors_file).open(encoding="utf-8") as f:
             all_contributors = json.load(f)
 
-        contributor_nodes = []
+        # Create a bullet list node
+        list_node = nodes.bullet_list()
 
         for contributor in all_contributors.get("contributors", []):
             name = contributor.get("name", "Unknown Contributor")
             contributions = ", ".join(contributor.get("contributions", []))
-            line = f"- {name} for {contributions}"
+            list_item_content = f"{name} for {contributions}"
 
-            # Create a new paragraph node for each contributor
-            paragraph_node = nodes.paragraph(text=line)
-            contributor_nodes.append(paragraph_node)
+            # Create a list item node
+            list_item_node = nodes.list_item()
+            paragraph_node = nodes.paragraph(text=list_item_content)
 
-        return contributor_nodes
+            # Add the paragraph to the list item
+            list_item_node += paragraph_node
+            list_node += list_item_node
+
+        return [list_node]
