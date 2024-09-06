@@ -15,7 +15,7 @@
 - Automatically reads the list of contributors from a `.all-contributorsrc` file.
 - Customizable relative path to the `.all-contributorsrc` file.
 - Outputs a list of contributors in a clean, human-readable format.
-  
+
 ## Installation
 
 1. Clone or download this repository.
@@ -32,7 +32,7 @@ pip install .
 ```python
 # conf.py
 extensions = [
-    'sphinx_all_contributors',
+    "sphinx_all_contributors",
     # other extensions
 ]
 ```
