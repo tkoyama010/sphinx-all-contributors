@@ -5,7 +5,7 @@ build-backend = 'setuptools.build_meta'
 [project]
 name = "sphinx-all-contributors"
 requires-python = '>=3.12'
-version = "0.2.dev0"
+version = "0.1.0"
 dependencies = [
   'poetry-core>=1.0.0'
 ]
