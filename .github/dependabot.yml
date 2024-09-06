@@ -1,11 +1,27 @@
 version: 2
 updates:
   # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
+  - package-ecosystem: "pip"
     directory: "/"
+    insecure-external-code-execution: allow
     schedule:
       interval: "weekly"
     groups:
       actions:
         patterns:
           - "*"
+    labels:
+      - "maintenance"
+      - "dependencies"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    insecure-external-code-execution: allow
+    schedule:
+      interval: "weekly"
+    groups:
+      actions:
+        patterns:
+          - "*"
+    labels:
+      - "maintenance"
+      - "dependencies"
