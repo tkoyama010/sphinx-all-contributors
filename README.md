@@ -76,6 +76,6 @@ make html
 The generated HTML (or other formats) will contain a list of contributors in the format:
 
 ```
-- Contributor Name 1 - ideas, docs
-- Contributor Name 2 - code
+- Contributor Name 1 for ideas, docs
+- Contributor Name 2 for code
 ```
