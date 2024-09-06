@@ -19,7 +19,7 @@
 ## Installation
 
 1. Clone or download this repository.
-2. Install the package by running:
+1. Install the package by running:
 
 ```bash
 pip install .
@@ -37,7 +37,7 @@ extensions = [
 ]
 ```
 
-2. Create a `.all-contributorsrc` file in your documentation source directory (or another location). This file should follow the [all-contributors](https://allcontributors.org/docs/en/format/specification) format. For example:
+1. Create a `.all-contributorsrc` file in your documentation source directory (or another location). You can create this file manually following the [all-contributors](https://allcontributors.org/docs/en/format/specification) format, or you can use the [all-contributors bot](https://allcontributors.org/docs/en/bot/overview) to automate this process and ensure that your contributor data is accurate and up-to-date. An example `.all-contributorsrc` file looks like this:
 
 ```json
 {
@@ -54,7 +54,7 @@ extensions = [
 }
 ```
 
-3. In your `.rst` file, use the `all-contributors` directive to display the list of contributors. You can specify the relative path to the `.all-contributorsrc` file or omit it to use the default path (`.all-contributorsrc` in the source directory).
+1. In your `.rst` file, use the `all-contributors` directive to display the list of contributors. You can specify the relative path to the `.all-contributorsrc` file or omit it to use the default path (`.all-contributorsrc` in the source directory).
 
 Example 1: Using the default `.all-contributorsrc` path:
 
@@ -68,7 +68,7 @@ Example 2: Specifying a relative path to the `.all-contributorsrc` file:
 .. all-contributors:: config/.all-contributorsrc
 ```
 
-4. Build your documentation:
+1. Build your documentation:
 
 ```bash
 make html
