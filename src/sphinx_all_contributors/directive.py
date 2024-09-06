@@ -37,9 +37,9 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
 
         contributors_list = []
 
-        for contributor in all_contributors.get('contributors', []):
-            name = contributor.get('name', 'Unknown Contributor')
-            contributions = ', '.join(contributor.get('contributions', []))
+        for contributor in all_contributors.get("contributors", []):
+            name = contributor.get("name", "Unknown Contributor")
+            contributions = ", ".join(contributor.get("contributions", []))
             contributors_list.append(f"- {name} - {contributions}")
 
         # Join the list items with newlines
