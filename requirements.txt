@@ -1,1 +1,2 @@
 -e .
+sphinx-book-theme==1.1.3
