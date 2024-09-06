@@ -43,7 +43,7 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
             line = f"- {name} for {contributions}"
 
             # Create a new paragraph node for each contributor
-            paragraph_node = nodes.paragraph(text=line)
-            contributor_nodes.append(paragraph_node)
+            x = nodes.list_item(text=line)
+            contributor_nodes.append(x)
 
         return contributor_nodes
