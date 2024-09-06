@@ -2,6 +2,14 @@
 requires = ["scikit-build-core"]
 build-backend = "scikit_build_core.build"
 
+[project]
+name = "sphinx-all-contributors"
+dynamic = [
+  "readme",
+  "version"
+]
+requires-python = '>=3.12'
+
 [tool.mypy]
 ignore_missing_imports = true
 strict = true
@@ -17,9 +25,6 @@ log_cli_level = "info"
 testpaths = [
   "tests"
 ]
-
-[tool.ruff]
-target-version = "py312"
 
 [tool.ruff.lint]
 extend-select = ["ALL"]
