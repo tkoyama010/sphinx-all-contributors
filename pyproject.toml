@@ -6,8 +6,8 @@ build-backend = 'setuptools.build_meta'
 name = "sphinx-all-contributors"
 requires-python = '>=3.12'
 version = "0.1.0"
-dependencies = [
-  'poetry-core>=1.0.0'
+dynamic = [
+  "readme"
 ]
 
 [tool.mypy]
@@ -15,6 +15,12 @@ ignore_missing_imports = true
 strict = true
 warn_unreachable = true
 enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
+
+[tool.poetry]
+name = "sphinx-all-contributors"
+readme = "README.md"
+authors = ["Tetsuo Koyama"]
+description = "all-contributors for Sphinx users"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
@@ -29,3 +35,6 @@ testpaths = [
 [tool.ruff.lint]
 extend-select = ["ALL"]
 ignore = ["COM812", "D203", "D212", "ISC001"]
+
+[tool.setuptools.dynamic]
+readme = {file = "README.md", content-type = "text/markdown"}
