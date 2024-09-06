@@ -3,7 +3,6 @@ updates:
   # Maintain dependencies for GitHub Actions
   - package-ecosystem: "pip"
     directory: "/"
-    insecure-external-code-execution: allow
     schedule:
       interval: "weekly"
     groups:
@@ -15,7 +14,6 @@ updates:
       - "dependencies"
   - package-ecosystem: "github-actions"
     directory: "/"
-    insecure-external-code-execution: allow
     schedule:
       interval: "weekly"
     groups:
