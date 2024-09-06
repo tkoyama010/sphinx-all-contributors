@@ -6,8 +6,8 @@
 `sphinx-all-contributors` is a Sphinx extension that allows you to easily display a list of contributors from a `.all-contributorsrc` file in your Sphinx documentation. The list is generated in a simple, readable format like:
 
 ```
-- Contributor Name 1 - ideas, docs
-- Contributor Name 2 - code
+- Contributor Name 1 for ideas, docs
+- Contributor Name 2 for code
 ```
 
 ## Features
@@ -18,11 +18,10 @@
 
 ## Installation
 
-1. Clone or download this repository.
-1. Install the package by running:
+[![pypi](https://img.shields.io/pypi/v/sphinx-all-contributors?label=pypi&logo=python&logoColor=white)](https://pypi.org/project/sphinx-all-contributors/)
 
-```bash
-pip install .
+```shell
+pip install sphinx-all-contributors
 ```
 
 ## Usage
