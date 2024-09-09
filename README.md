@@ -1,6 +1,6 @@
 # sphinx-all-contributors
 
-[![All Contributors](https://img.shields.io/github/all-contributors/tkoyama010/sphinx-all-contributors?color=ee8449)](https://sphinx-all-contributors.readthedocs.io/en/latest/reference/about.html#contributors)
+![All Contributors](https://img.shields.io/github/all-contributors/tkoyama010/sphinx-all-contributors?color=ee8449)
 [![Documentation Status](https://readthedocs.org/projects/sphinx-all-contributors/badge/?version=latest)](https://sphinx-all-contributors.readthedocs.io/en/latest/?badge=latest)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![code style:prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
