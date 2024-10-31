@@ -22,7 +22,7 @@ repos:
     hooks:
       - id: pydocstyle
         additional_dependencies: [tomli==2.0.1]
-        files: ^src/skgmsh/
+        files: ^src/sphinx_all_contributors
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.13.0
     hooks:
