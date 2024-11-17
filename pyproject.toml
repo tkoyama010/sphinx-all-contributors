@@ -1,32 +1,32 @@
 [build-system]
-requires = ['setuptools<69.0.4']
 build-backend = 'setuptools.build_meta'
+requires = ['setuptools<69.0.4']
 
 [project]
+dynamic = ["readme"]
 name = "sphinx-all-contributors"
 requires-python = '>=3.12'
 version = "0.2.dev0"
-dynamic = ["readme"]
 
 [tool.mypy]
+enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 ignore_missing_imports = true
 strict = true
 warn_unreachable = true
-enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 
 [tool.poetry]
-name = "sphinx-all-contributors"
-readme = "README.md"
 authors = ["Tetsuo Koyama"]
 description = "all-contributors for Sphinx users"
+name = "sphinx-all-contributors"
+readme = "README.md"
 
 [tool.pytest.ini_options]
-minversion = "6.0"
 addopts = ["--showlocals", "--strict-config", "--strict-markers", "-ra"]
-xfail_strict = true
 filterwarnings = ["error"]
 log_cli_level = "info"
+minversion = "6.0"
 testpaths = ["tests"]
+xfail_strict = true
 
 [tool.ruff.lint]
 extend-select = ["ALL"]
