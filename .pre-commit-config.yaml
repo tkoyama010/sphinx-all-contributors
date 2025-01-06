@@ -24,7 +24,7 @@ repos:
         additional_dependencies: [tomli==2.0.1]
         files: ^src/sphinx_all_contributors
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.14.0
+    rev: v1.14.1
     hooks:
       - id: mypy
         files: src
@@ -66,7 +66,7 @@ repos:
       - id: rst-directive-colons
       - id: rst-inline-touching-normal
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.4
+    rev: v0.8.6
     hooks:
       - id: ruff
         args: ["--fix", "--show-fixes"]
@@ -100,6 +100,6 @@ repos:
         args: [--option, "reorder_arrays=true", --option, "reorder_keys=true"]
 
   - repo: https://github.com/woodruffw/zizmor-pre-commit
-    rev: v0.8.0
+    rev: v1.0.0
     hooks:
       - id: zizmor
