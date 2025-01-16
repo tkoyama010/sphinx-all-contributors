@@ -9,7 +9,7 @@ repos:
       - id: blacken-docs
         additional_dependencies: [black==23.*]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.30.0
+    rev: 0.31.0
     hooks:
       - id: check-github-workflows
   - repo: https://github.com/codespell-project/codespell
@@ -66,7 +66,7 @@ repos:
       - id: rst-directive-colons
       - id: rst-inline-touching-normal
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.6
+    rev: v0.9.1
     hooks:
       - id: ruff
         args: ["--fix", "--show-fixes"]
@@ -100,6 +100,6 @@ repos:
         args: [--option, "reorder_arrays=true", --option, "reorder_keys=true"]
 
   - repo: https://github.com/woodruffw/zizmor-pre-commit
-    rev: v1.0.0
+    rev: v1.1.1
     hooks:
       - id: zizmor
