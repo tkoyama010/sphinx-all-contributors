@@ -6,7 +6,7 @@ requires = ['setuptools<69.0.4']
 dynamic = ["readme"]
 name = "sphinx-all-contributors"
 requires-python = '>=3.12'
-version = "0.3.dev0"
+version = "0.2.0"
 
 [project.optional-dependencies]
 all = ['sphinx-all-contributors[docs]']
