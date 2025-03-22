@@ -9,7 +9,7 @@
 project = "sphinx-all-contributors"
 copyright = "2024, Tetsuo Koyama"  # noqa: A001
 author = "Tetsuo Koyama"
-release = "0.2.dev0"
+release = "0.3.dev0"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
