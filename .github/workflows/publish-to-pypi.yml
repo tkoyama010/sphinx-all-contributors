@@ -57,4 +57,4 @@ jobs:
           path: dist/
       - name: Publish package to PyPI
         if: github.event_name == 'release'
-        uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@db8f07d3871a0a180efa06b95d467625c19d5d5f
