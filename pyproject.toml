@@ -1,12 +1,18 @@
 [build-system]
 build-backend = 'setuptools.build_meta'
-requires = ['setuptools<69.0.4']
+requires = ['setuptools>=77.0.3']
 
 [project]
 dynamic = ["readme"]
 name = "sphinx-all-contributors"
 requires-python = '>=3.12'
 version = "0.3.dev0"
+project-urls = {
+  "Homepage" = "https://github.com/tkoyama010/sphinx-all-contributors",
+  "Documentation" = "https://sphinx-all-contributors.readthedocs.io/en/latest/",
+  "Source" = "https://github.com/tkoyama010/sphinx-all-contributors",
+  "Tracker" = "https://github.com/tkoyama010/sphinx-all-contributors/issues"
+}
 
 [project.optional-dependencies]
 all = ['sphinx-all-contributors[docs]']
