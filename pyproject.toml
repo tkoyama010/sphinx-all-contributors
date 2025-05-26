@@ -25,7 +25,7 @@ strict = true
 warn_unreachable = true
 
 [tool.poetry]
-authors = [name = "Tetsuo Koyama", email = "tkoyama010@gmail.com"]
+authors = [{name = "Tetsuo Koyama", email = "tkoyama010@gmail.com"}]
 description = "all-contributors for Sphinx users"
 name = "sphinx-all-contributors"
 readme = "README.md"
