@@ -7,16 +7,17 @@ dynamic = ["readme"]
 name = "sphinx-all-contributors"
 requires-python = '>=3.12'
 version = "0.3.dev0"
-project-urls = {
-  "Homepage" = "https://github.com/tkoyama010/sphinx-all-contributors",
-  "Documentation" = "https://sphinx-all-contributors.readthedocs.io/en/latest/",
-  "Source" = "https://github.com/tkoyama010/sphinx-all-contributors",
-  "Tracker" = "https://github.com/tkoyama010/sphinx-all-contributors/issues"
-}
 
 [project.optional-dependencies]
 all = ['sphinx-all-contributors[docs]']
 docs = ['sphinx-book-theme==1.1.3']
+
+[project.urls]
+Homepage = "https://sphinx-all-contributors.readthedocs.io/en/latest"
+Code = "https://github.com/tkoyama010/sphinx-all-contributors"
+Documentation = "https://sphinx-all-contributors.readthedocs.io/en/latest"
+Repository = "https://github.com/tkoyama010/sphinx-all-contributors"
+Issues = "https://github.com/tkoyama010/sphinx-all-contributors/issues"
 
 [tool.mypy]
 enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
@@ -25,7 +26,7 @@ strict = true
 warn_unreachable = true
 
 [tool.poetry]
-authors = ["Tetsuo Koyama"]
+authors = [name = "Tetsuo Koyama", email = "tkoyama010@gmail.com"]
 description = "all-contributors for Sphinx users"
 name = "sphinx-all-contributors"
 readme = "README.md"
