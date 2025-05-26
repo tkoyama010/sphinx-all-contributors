@@ -1,6 +1,6 @@
 [build-system]
 build-backend = 'setuptools.build_meta'
-requires = ['setuptools<69.0.4']
+requires = ['setuptools>=77.0.3,<77.0.4']
 
 [project]
 dynamic = ["readme"]
@@ -12,6 +12,12 @@ version = "0.3.dev0"
 all = ['sphinx-all-contributors[docs]']
 docs = ['sphinx-book-theme==1.1.3']
 
+[project.urls]
+Documentation = "https://sphinx-all-contributors.readthedocs.io/en/latest"
+Homepage = "https://sphinx-all-contributors.readthedocs.io/en/latest"
+Issues = "https://github.com/tkoyama010/sphinx-all-contributors/issues"
+Repository = "https://github.com/tkoyama010/sphinx-all-contributors"
+
 [tool.mypy]
 enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
 ignore_missing_imports = true
@@ -19,7 +25,7 @@ strict = true
 warn_unreachable = true
 
 [tool.poetry]
-authors = ["Tetsuo Koyama"]
+authors = [{ name = "Tetsuo Koyama", email = "tkoyama010@gmail.com" }]
 description = "all-contributors for Sphinx users"
 name = "sphinx-all-contributors"
 readme = "README.md"
