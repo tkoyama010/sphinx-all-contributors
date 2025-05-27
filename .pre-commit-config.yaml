@@ -66,7 +66,7 @@ repos:
       - id: rst-directive-colons
       - id: rst-inline-touching-normal
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.10
+    rev: v0.11.11
     hooks:
       - id: ruff
         args: ["--fix", "--show-fixes"]
@@ -100,6 +100,6 @@ repos:
         args: [--option, "reorder_arrays=true", --option, "reorder_keys=true"]
 
   - repo: https://github.com/woodruffw/zizmor-pre-commit
-    rev: v1.7.0
+    rev: v1.8.0
     hooks:
       - id: zizmor
