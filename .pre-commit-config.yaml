@@ -88,6 +88,7 @@ repos:
       - id: mixed-line-ending
       - id: name-tests-test
         args: ["--pytest-test-first"]
+        exclude: ^tests/conf\.py$
       - id: no-commit-to-branch
         args: [--branch, main]
       - id: requirements-txt-fixer
