@@ -10,6 +10,7 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
 ]
+dependencies = ["docutils", "sphinx>=4.0"]
 dynamic = ["readme"]
 name = "sphinx-all-contributors"
 requires-python = '>=3.12'
