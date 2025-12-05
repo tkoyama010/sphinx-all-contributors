@@ -5,6 +5,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      days: 7
+      default-days: 7
+    open-pull-requests-limit: 10
     groups:
       actions:
         patterns:
@@ -16,6 +20,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    cooldown:
+      days: 7
+      default-days: 7
+    open-pull-requests-limit: 10
     groups:
       actions:
         patterns:

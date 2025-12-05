@@ -20,6 +20,10 @@ version = "0.3.dev0"
 all = ['sphinx-all-contributors[docs]']
 docs = ['sphinx-book-theme==1.1.3']
 
+[dependency-groups]
+dev = [{ include-group = "test" }]
+test = ["pytest"]
+
 [project.urls]
 Documentation = "https://sphinx-all-contributors.readthedocs.io/en/latest"
 Homepage = "https://sphinx-all-contributors.readthedocs.io/en/latest"
@@ -42,6 +46,7 @@ readme = "README.md"
 addopts = ["--showlocals", "--strict-config", "--strict-markers", "-ra"]
 filterwarnings = ["error", "ignore::DeprecationWarning"]
 log_cli_level = "info"
+log_level = "INFO"
 minversion = "6.0"
 testpaths = ["tests"]
 xfail_strict = true
