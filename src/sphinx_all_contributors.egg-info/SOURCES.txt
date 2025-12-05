@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/sphinx_all_contributors/__init__.py
+src/sphinx_all_contributors/directive.py
+src/sphinx_all_contributors.egg-info/PKG-INFO
+src/sphinx_all_contributors.egg-info/SOURCES.txt
+src/sphinx_all_contributors.egg-info/dependency_links.txt
+src/sphinx_all_contributors.egg-info/requires.txt
+src/sphinx_all_contributors.egg-info/top_level.txt
+tests/test_directive.py
