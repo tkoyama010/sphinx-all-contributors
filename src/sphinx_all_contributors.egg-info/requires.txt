@@ -1,8 +1,0 @@
-docutils
-sphinx>=4.0
-
-[all]
-sphinx-all-contributors[docs]
-
-[docs]
-sphinx-book-theme==1.1.3
