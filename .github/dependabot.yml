@@ -5,6 +5,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 10
     groups:
       actions:
         patterns:
@@ -12,10 +13,13 @@ updates:
     labels:
       - "maintenance"
       - "dependencies"
+    cooldown:
+      default-days: 7
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 10
     groups:
       actions:
         patterns:
@@ -23,3 +27,5 @@ updates:
     labels:
       - "maintenance"
       - "dependencies"
+    cooldown:
+      default-days: 7
