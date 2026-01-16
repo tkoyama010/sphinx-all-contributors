@@ -38,24 +38,22 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
 
         # Create a bullet list node
         list_node = nodes.bullet_list()
-        
+
         # Check if profile option is enabled
         show_profile = "profile" in self.options
 
         for contributor in all_contributors.get("contributors", []):
             name = contributor.get("name", "Unknown Contributor")
             contributions = ", ".join(contributor.get("contributions", []))
-            
+
             # Create a list item node
             list_item_node = nodes.list_item()
             paragraph_node = nodes.paragraph()
-            
+
             if show_profile and "profile" in contributor:
                 # Create a reference node for the profile link
                 reference_node = nodes.reference(
-                    "",
-                    name,
-                    refuri=contributor["profile"]
+                    "", name, refuri=contributor["profile"]
                 )
                 paragraph_node += reference_node
                 paragraph_node += nodes.Text(f" for {contributions}")
