@@ -55,13 +55,35 @@ class MockStateMachine(StateMachine):
         self.current_state = MockState(document)
 
 
-def test_all_contributors_directive(sphinx_app: Sphinx, tmpdir: Path) -> None:
-    """Test the all-contributors directive."""
-    # Create a temporary .all-contributorsrc file
+@pytest.mark.parametrize(
+    ("options", "has_profiles", "should_have_links"),
+    [
+        pytest.param({}, False, False, id="no_profile_option_no_data"),
+        pytest.param({}, True, False, id="no_profile_option_with_data"),
+        pytest.param({"profile": None}, True, True, id="profile_option_enabled"),
+    ],
+)
+def test_all_contributors_directive(
+    sphinx_app: Sphinx,
+    tmpdir: Path,
+    options: dict[str, Any],
+    has_profiles: bool,
+    should_have_links: bool,
+) -> None:
+    """Test the all-contributors directive with different options."""
+    # Create contributor data with optional profile information
     contributors_data = {
         "contributors": [
-            {"name": "John Doe", "contributions": ["code", "doc"]},
-            {"name": "Jane Smith", "contributions": ["design", "test"]},
+            {
+                "name": "John Doe",
+                "contributions": ["code", "doc"],
+                **({"profile": "https://github.com/johndoe"} if has_profiles else {}),
+            },
+            {
+                "name": "Jane Smith",
+                "contributions": ["design", "test"],
+                **({"profile": "https://github.com/janesmith"} if has_profiles else {}),
+            },
         ]
     }
     contributors_file = tmpdir / ".all-contributorsrc"
@@ -78,7 +100,7 @@ def test_all_contributors_directive(sphinx_app: Sphinx, tmpdir: Path) -> None:
     directive = AllContributorsDirective(
         name="all-contributors",
         arguments=[str(contributors_file)],
-        options={},
+        options=options,
         content=StringList([""], source="test"),
         lineno=0,
         content_offset=0,
@@ -100,14 +122,22 @@ def test_all_contributors_directive(sphinx_app: Sphinx, tmpdir: Path) -> None:
     # Assert that the bullet_list contains the expected list items
     list_items = result[0].children
     assert len(list_items) == 2, "List items does not have length 2"  # noqa: S101, PLR2004
-    assert isinstance(list_items[0], nodes.list_item), (  # noqa: S101
-        "First list item is not a list item"
-    )
-    assert isinstance(list_items[1], nodes.list_item), (  # noqa: S101
-        "Second list item is not a list item"
-    )
 
-    # Assert that the list items contain the expected text
+    # Check if links are present based on should_have_links
+    first_para = list_items[0].children[0]
+    if should_have_links:
+        assert isinstance(first_para.children[0], nodes.reference), (  # noqa: S101
+            "Should contain reference node when profile option is enabled"
+        )
+        assert first_para.children[0]["refuri"] == "https://github.com/johndoe", (  # noqa: S101
+            "Profile link should be correct"
+        )
+    else:
+        assert isinstance(first_para.children[0], nodes.Text), (  # noqa: S101
+            "Should contain text node when profile option is disabled"
+        )
+
+    # Assert text content is correct
     assert list_items[0].astext() == "John Doe for code, doc", (  # noqa: S101
         "First list item text is incorrect"
     )
