@@ -2,6 +2,7 @@
 
 import json
 from pathlib import Path
+from typing import ClassVar
 
 from docutils import nodes  # type: ignore[import-untyped]
 from docutils.parsers.rst import Directive, directives  # type: ignore[import-untyped]
@@ -14,7 +15,7 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
     required_arguments = 0
     optional_arguments = 1
     has_content = False
-    option_spec = {"profile": directives.flag}
+    option_spec: ClassVar[dict[str, object]] = {"profile": directives.flag}
 
     def run(self) -> list[nodes.Node]:
         """Return a list of nodes to insert into the document."""

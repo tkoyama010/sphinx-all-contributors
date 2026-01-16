@@ -67,6 +67,7 @@ def test_all_contributors_directive(
     sphinx_app: Sphinx,
     tmpdir: Path,
     options: dict[str, Any],
+    *,
     has_profiles: bool,
     should_have_links: bool,
 ) -> None:
