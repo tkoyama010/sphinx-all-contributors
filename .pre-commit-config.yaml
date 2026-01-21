@@ -46,7 +46,7 @@ repos:
             "--no-strict-optional",
           ]
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: v3.7.4
+    rev: v3.8.0
     hooks:
       - id: prettier
         types_or: [yaml, markdown, html, css, scss, javascript, json, toml]
@@ -67,7 +67,7 @@ repos:
       - id: rst-directive-colons
       - id: rst-inline-touching-normal
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.11
+    rev: v0.14.13
     hooks:
       - id: ruff-check
         args: ["--fix", "--show-fixes"]
@@ -102,6 +102,6 @@ repos:
         args: [--option, "reorder_arrays=true", --option, "reorder_keys=true"]
 
   - repo: https://github.com/woodruffw/zizmor-pre-commit
-    rev: v1.20.0
+    rev: v1.22.0
     hooks:
       - id: zizmor
