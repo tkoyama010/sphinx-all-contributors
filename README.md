@@ -81,3 +81,11 @@ The generated HTML (or other formats) will contain a list of contributors in the
 - Contributor Name 1 for ideas, docs
 - Contributor Name 2 for code
 ```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request on [GitHub](https://github.com/tkoyama010/sphinx-all-contributors).
+
+## License
+
+[MIT](LICENSE)
