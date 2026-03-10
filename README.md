@@ -12,7 +12,7 @@
 - Contributor Name 2 for code
 ```
 
-## Installation
+## Install
 
 [![pypi](https://img.shields.io/pypi/v/sphinx-all-contributors?label=pypi&logo=python&logoColor=white)](https://pypi.org/project/sphinx-all-contributors/)
 
