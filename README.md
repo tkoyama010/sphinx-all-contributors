@@ -12,12 +12,6 @@
 - Contributor Name 2 for code
 ```
 
-## Features
-
-- Automatically reads the list of contributors from a `.all-contributorsrc` file.
-- Customizable relative path to the `.all-contributorsrc` file.
-- Outputs a list of contributors in a clean, human-readable format.
-
 ## Installation
 
 [![pypi](https://img.shields.io/pypi/v/sphinx-all-contributors?label=pypi&logo=python&logoColor=white)](https://pypi.org/project/sphinx-all-contributors/)
@@ -81,6 +75,12 @@ The generated HTML (or other formats) will contain a list of contributors in the
 - Contributor Name 1 for ideas, docs
 - Contributor Name 2 for code
 ```
+
+## Features
+
+- Automatically reads the list of contributors from a `.all-contributorsrc` file.
+- Customizable relative path to the `.all-contributorsrc` file.
+- Outputs a list of contributors in a clean, human-readable format.
 
 ## Contributing
 
