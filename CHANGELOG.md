@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.3.2](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.1...sphinx-all-contributors-v0.3.2) (2026-03-14)
+
+### Bug Fixes
+
+- restore publish-to-pypi.yml as reusable workflow for PyPI OIDC ([#138](https://github.com/tkoyama010/sphinx-all-contributors/issues/138)) ([2709384](https://github.com/tkoyama010/sphinx-all-contributors/commit/27093841109796f22d0a33887328a815d06f46c7))
+
 ## [0.3.1](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.0...sphinx-all-contributors-v0.3.1) (2026-03-14)
 
 ### Continuous Integration
