@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.1](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.0...sphinx-all-contributors-v0.3.1) (2026-03-14)
+
+
+### Continuous Integration
+
+* make ci commits trigger release PRs ([#136](https://github.com/tkoyama010/sphinx-all-contributors/issues/136)) ([d1262cd](https://github.com/tkoyama010/sphinx-all-contributors/commit/d1262cd916a6bd71a037bbfae6662c43a159d3b2))
+* publish to PyPI directly from release-please workflow ([#135](https://github.com/tkoyama010/sphinx-all-contributors/issues/135)) ([5ce5aab](https://github.com/tkoyama010/sphinx-all-contributors/commit/5ce5aab19d82625564372a14c2b1863e1769b3ed))
+
 ## [0.3.0](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.2.0...sphinx-all-contributors-v0.3.0) (2026-03-14)
 
 ### Features
