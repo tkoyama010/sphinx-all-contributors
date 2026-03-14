@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.2...sphinx-all-contributors-v0.3.3) (2026-03-14)
+
+
+### Bug Fixes
+
+* disable attestations in PyPI publish workflow ([#140](https://github.com/tkoyama010/sphinx-all-contributors/issues/140)) ([5d3e63b](https://github.com/tkoyama010/sphinx-all-contributors/commit/5d3e63ba04e49e6c987fd5ae6f6b3661f875b103))
+
 ## [0.3.2](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.1...sphinx-all-contributors-v0.3.2) (2026-03-14)
 
 ### Bug Fixes
