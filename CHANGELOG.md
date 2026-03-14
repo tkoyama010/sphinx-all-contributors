@@ -1,6 +1,11 @@
 # Changelog
 
-## [0.2.1](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.2.0...sphinx-all-contributors-v0.2.1) (2026-03-14)
+## [0.3.0](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.2.0...sphinx-all-contributors-v0.3.0) (2026-03-14)
+
+### Features
+
+- Add profile option to display contributor profile links ([#119](https://github.com/tkoyama010/sphinx-all-contributors/issues/119)) ([e0a1475](https://github.com/tkoyama010/sphinx-all-contributors/commit/e0a1475a3833a2641e9646be284fc410f8f44c82))
+- Add Python 3.14 support ([#101](https://github.com/tkoyama010/sphinx-all-contributors/issues/101)) ([d126794](https://github.com/tkoyama010/sphinx-all-contributors/commit/d126794fdec50917b8dd4eef2fc9c0a8f37d8c05))
 
 ### Documentation
 
