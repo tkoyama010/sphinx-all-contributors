@@ -1,5 +1,5 @@
-sphinx-all-contributors documentation
-=====================================
+.. include:: ../README.md
+   :parser: myst_parser.sphinx_
 
 Basic Usage
 -----------
