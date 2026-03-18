@@ -2,10 +2,9 @@
 
 ## [0.3.4](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.3...sphinx-all-contributors-v0.3.4) (2026-03-18)
 
-
 ### Documentation
 
-* add `{include} ../README.md` to docs/index.rst ([#143](https://github.com/tkoyama010/sphinx-all-contributors/issues/143)) ([ece94d0](https://github.com/tkoyama010/sphinx-all-contributors/commit/ece94d0386b4e49ca5a217d40c1d10c582206866))
+- add `{include} ../README.md` to docs/index.rst ([#143](https://github.com/tkoyama010/sphinx-all-contributors/issues/143)) ([ece94d0](https://github.com/tkoyama010/sphinx-all-contributors/commit/ece94d0386b4e49ca5a217d40c1d10c582206866))
 
 ## [0.3.3](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.2...sphinx-all-contributors-v0.3.3) (2026-03-14)
 
