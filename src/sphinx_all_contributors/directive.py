@@ -100,16 +100,16 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
 
         for contributor in all_contributors.get("contributors", []):
             name = contributor.get("name", "Unknown Contributor")
-            contribution_types = contributor.get("contributions", [])
+            contribution_types: list[str] = contributor.get("contributions", [])
 
             # Format contributions with optional emoji
             if use_emoji:
-                contributions_list = [
+                contributions_list: list[str] = [
                     f"{EMOJI_MAP.get(contrib, '')} {contrib}".strip()
                     for contrib in contribution_types
                 ]
             else:
-                contributions_list = contribution_types
+                contributions_list = list(contribution_types)
             contributions = ", ".join(contributions_list)
 
             # Create a list item node

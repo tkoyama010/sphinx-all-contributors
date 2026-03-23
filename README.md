@@ -14,6 +14,15 @@
 - Contributor Name 2 for code
 ```
 
+## Table of Contents
+
+- [Install](#install)
+- [Usage](#usage)
+- [Features](#features)
+- [Options](#options)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Install
 
 [![pypi](https://img.shields.io/pypi/v/sphinx-all-contributors?label=pypi&logo=python&logoColor=white)](https://pypi.org/project/sphinx-all-contributors/)
