@@ -379,9 +379,10 @@ def test_all_contributors_directive_with_avatar(
         assert list_items[0].astext() == "John Doe avatar John Doe for code, doc", (  # noqa: S101
             "First list item text is incorrect with avatar"
         )
-        assert (
-            list_items[1].astext() == "Jane Smith avatar Jane Smith for design, test"
-        ), "Second list item text is incorrect with avatar"
+        expected = "Jane Smith avatar Jane Smith for design, test"
+        assert list_items[1].astext() == expected, (  # noqa: S101
+            "Second list item text is incorrect with avatar"
+        )
     else:
         # First child should be text node when avatar option is disabled
         assert isinstance(first_para.children[0], nodes.Text), (  # noqa: S101
