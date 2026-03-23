@@ -145,3 +145,140 @@ def test_all_contributors_directive(
     assert list_items[1].astext() == "Jane Smith for design, test", (  # noqa: S101
         "Second list item text is incorrect"
     )
+
+
+@pytest.mark.parametrize(
+    ("options", "has_profiles", "should_have_links"),
+    [
+        pytest.param({}, False, False, id="table_no_profile_option_no_data"),
+        pytest.param({}, True, False, id="table_no_profile_option_with_data"),
+        pytest.param({"profile": None}, True, True, id="table_profile_option_enabled"),
+    ],
+)
+def test_all_contributors_directive_table(
+    sphinx_app: Sphinx,
+    tmpdir: Path,
+    options: dict[str, Any],
+    *,
+    has_profiles: bool,
+    should_have_links: bool,
+) -> None:
+    """Test the all-contributors directive with table option."""
+    # Create contributor data with optional profile information
+    contributors_data = {
+        "contributors": [
+            {
+                "name": "John Doe",
+                "contributions": ["code", "doc"],
+                **({"profile": "https://github.com/johndoe"} if has_profiles else {}),
+            },
+            {
+                "name": "Jane Smith",
+                "contributions": ["design", "test"],
+                **({"profile": "https://github.com/janesmith"} if has_profiles else {}),
+            },
+        ]
+    }
+    contributors_file = tmpdir / ".all-contributorsrc"
+    with Path(contributors_file).open("w") as f:
+        json.dump(contributors_data, f)
+
+    # Create a minimal Sphinx environment
+    settings = OptionParser(components=[Parser]).get_default_values()
+    document = new_document("<test>", settings=settings)
+    document.settings.env = sphinx_app.env
+    state_machine = MockStateMachine(document)
+
+    # Add table option
+    table_options = {**options, "table": None}
+
+    # Create a directive instance
+    directive = AllContributorsDirective(
+        name="all-contributors",
+        arguments=[str(contributors_file)],
+        options=table_options,
+        content=StringList([""], source="test"),
+        lineno=0,
+        content_offset=0,
+        block_text="",
+        state=MockState(document),
+        state_machine=state_machine,
+    )
+
+    # Run the directive
+    result = directive.run()
+
+    # Assert that the result is a list containing a table node
+    assert isinstance(result, list), "Result is not a list"  # noqa: S101
+    assert len(result) == 1, "Result list does not have length 1"  # noqa: S101
+    assert isinstance(result[0], nodes.table), (  # noqa: S101
+        "First element is not a table"
+    )
+
+    # Get the table structure
+    table = result[0]
+    tgroup = table.children[0]
+    assert isinstance(tgroup, nodes.tgroup), "No tgroup in table"  # noqa: S101
+
+    # Check table has thead and tbody
+    thead = None
+    tbody = None
+    for child in tgroup.children:
+        if isinstance(child, nodes.thead):
+            thead = child
+        elif isinstance(child, nodes.tbody):
+            tbody = child
+
+    assert thead is not None, "No thead in table"  # noqa: S101
+    assert tbody is not None, "No tbody in table"  # noqa: S101
+
+    # Check header row
+    header_row = thead.children[0]
+    assert isinstance(header_row, nodes.row), "No header row"  # noqa: S101
+    header_cells = header_row.children
+    assert len(header_cells) == 2, "Header should have 2 cells"  # noqa: S101, PLR2004
+    assert header_cells[0].astext() == "Name", "First header should be 'Name'"  # noqa: S101
+    assert header_cells[1].astext() == "Contributions", (  # noqa: S101
+        "Second header should be 'Contributions'"
+    )
+
+    # Check body rows
+    body_rows = tbody.children
+    assert len(body_rows) == 2, "Table body should have 2 rows"  # noqa: S101, PLR2004
+
+    # Check first row
+    first_row = body_rows[0]
+    first_row_cells = first_row.children
+    assert len(first_row_cells) == 2, "First row should have 2 cells"  # noqa: S101, PLR2004
+
+    # Check if links are present based on should_have_links
+    first_cell_para = first_row_cells[0].children[0]
+    if should_have_links:
+        assert isinstance(first_cell_para.children[0], nodes.reference), (  # noqa: S101
+            "Should contain reference node when profile option is enabled"
+        )
+        assert first_cell_para.children[0]["refuri"] == "https://github.com/johndoe", (  # noqa: S101
+            "Profile link should be correct"
+        )
+    else:
+        assert isinstance(first_cell_para.children[0], nodes.Text), (  # noqa: S101
+            "Should contain text node when profile option is disabled"
+        )
+
+    # Assert text content is correct
+    assert first_row_cells[0].astext() == "John Doe", (  # noqa: S101
+        "First row name is incorrect"
+    )
+    assert first_row_cells[1].astext() == "code, doc", (  # noqa: S101
+        "First row contributions are incorrect"
+    )
+
+    # Check second row
+    second_row = body_rows[1]
+    second_row_cells = second_row.children
+    assert second_row_cells[0].astext() == "Jane Smith", (  # noqa: S101
+        "Second row name is incorrect"
+    )
+    assert second_row_cells[1].astext() == "design, test", (  # noqa: S101
+        "Second row contributions are incorrect"
+    )
