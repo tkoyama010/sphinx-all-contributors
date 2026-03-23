@@ -15,7 +15,10 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
     required_arguments = 0
     optional_arguments = 1
     has_content = False
-    option_spec: ClassVar[dict[str, object]] = {"profile": directives.flag}
+    option_spec: ClassVar[dict[str, object]] = {
+        "profile": directives.flag,
+        "avatar": directives.flag,
+    }
 
     def run(self) -> list[nodes.Node]:
         """Return a list of nodes to insert into the document."""
@@ -42,6 +45,7 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
 
         # Check if profile option is enabled
         show_profile = "profile" in self.options
+        show_avatar = "avatar" in self.options
 
         for contributor in all_contributors.get("contributors", []):
             name = contributor.get("name", "Unknown Contributor")
@@ -50,6 +54,15 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
             # Create a list item node
             list_item_node = nodes.list_item()
             paragraph_node = nodes.paragraph()
+
+            # Add avatar image if the avatar option is enabled
+            if show_avatar and "avatar_url" in contributor:
+                image_node = nodes.image(uri=contributor["avatar_url"])
+                image_node["alt"] = f"{name} avatar"
+                image_node["width"] = "50px"
+                image_node["height"] = "50px"
+                paragraph_node += image_node
+                paragraph_node += nodes.Text(" ")
 
             if show_profile and "profile" in contributor:
                 # Create a reference node for the profile link
