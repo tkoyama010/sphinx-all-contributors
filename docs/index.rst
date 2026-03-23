@@ -36,10 +36,23 @@ The ``:table:`` option displays contributors in a table format instead of a bull
 .. all-contributors:: ../.all-contributorsrc
    :table:
 
+Using Avatar Icons
+------------------
+
+The ``:avatar:`` option displays contributor avatar/profile images from the ``avatar_url`` field:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :avatar:
+
+.. all-contributors:: ../.all-contributorsrc
+   :avatar:
+
 Combining Options
 -----------------
 
-You can combine ``:table:`` and ``:profile:`` options to display contributors in a table with clickable profile links:
+You can combine ``:table:``, ``:profile:``, and ``:avatar:`` options:
 
 .. code-block:: rst
 
@@ -50,3 +63,13 @@ You can combine ``:table:`` and ``:profile:`` options to display contributors in
 .. all-contributors:: ../.all-contributorsrc
    :table:
    :profile:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :profile:
+       :avatar:
+
+.. all-contributors:: ../.all-contributorsrc
+   :profile:
+   :avatar:
