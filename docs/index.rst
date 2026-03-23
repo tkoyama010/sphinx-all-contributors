@@ -49,10 +49,23 @@ The ``:avatar:`` option displays contributor avatar/profile images from the ``av
 .. all-contributors:: ../.all-contributorsrc
    :avatar:
 
+Using Emoji Icons
+-----------------
+
+The ``:emoji:`` option displays emoji icons before contribution types based on the all-contributors emoji key:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :emoji:
+
+.. all-contributors:: ../.all-contributorsrc
+   :emoji:
+
 Combining Options
 -----------------
 
-You can combine ``:table:``, ``:profile:``, and ``:avatar:`` options:
+You can combine ``:table:``, ``:profile:``, ``:avatar:``, and ``:emoji:`` options:
 
 .. code-block:: rst
 
@@ -73,3 +86,13 @@ You can combine ``:table:``, ``:profile:``, and ``:avatar:`` options:
 .. all-contributors:: ../.all-contributorsrc
    :profile:
    :avatar:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :profile:
+       :emoji:
+
+.. all-contributors:: ../.all-contributorsrc
+   :profile:
+   :emoji:

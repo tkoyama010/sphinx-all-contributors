@@ -395,3 +395,122 @@ def test_all_contributors_directive_with_avatar(
         assert list_items[1].astext() == "Jane Smith for design, test", (  # noqa: S101
             "Second list item text is incorrect"
         )
+
+
+def test_all_contributors_directive_with_emoji(
+    sphinx_app: Sphinx,
+    tmpdir: Path,
+) -> None:
+    """Test the all-contributors directive with emoji option."""
+    # Create contributor data
+    contributors_data = {
+        "contributors": [
+            {
+                "name": "John Doe",
+                "contributions": ["code", "doc"],
+            },
+            {
+                "name": "Jane Smith",
+                "contributions": ["design", "test"],
+            },
+        ]
+    }
+    contributors_file = tmpdir / ".all-contributorsrc"
+    with Path(contributors_file).open("w") as f:
+        json.dump(contributors_data, f)
+
+    # Create a minimal Sphinx environment
+    settings = OptionParser(components=[Parser]).get_default_values()
+    document = new_document("<test>", settings=settings)
+    document.settings.env = sphinx_app.env
+    state_machine = MockStateMachine(document)
+
+    # Create a directive instance with emoji option
+    directive = AllContributorsDirective(
+        name="all-contributors",
+        arguments=[str(contributors_file)],
+        options={"emoji": None},  # Enable emoji option
+        content=StringList([""], source="test"),
+        lineno=0,
+        content_offset=0,
+        block_text="",
+        state=MockState(document),
+        state_machine=state_machine,
+    )
+
+    # Run the directive
+    result = directive.run()
+
+    # Assert that the result is a list containing a bullet_list node
+    assert isinstance(result, list), "Result is not a list"  # noqa: S101
+    assert len(result) == 1, "Result list does not have length 1"  # noqa: S101
+    assert isinstance(result[0], nodes.bullet_list), (  # noqa: S101
+        "First element is not a bullet list"
+    )
+
+    # Assert that the bullet_list contains the expected list items
+    list_items = result[0].children
+    assert len(list_items) == 2, "List items does not have length 2"  # noqa: S101, PLR2004
+
+    # Assert text content includes emojis
+    expected_john = "John Doe for \U0001f4bb code, \U0001f4d6 doc"
+    assert list_items[0].astext() == expected_john, (  # noqa: S101
+        "First list item text should include emojis"
+    )
+    expected = "Jane Smith for \U0001f3a8 design, \u26a0\ufe0f test"
+    assert list_items[1].astext() == expected, (  # noqa: S101
+        "Second list item text should include emojis"
+    )
+
+
+def test_all_contributors_directive_emoji_with_unknown_type(
+    sphinx_app: Sphinx,
+    tmpdir: Path,
+) -> None:
+    """Test directive with emoji option and unknown contribution type."""
+    # Create contributor data with an unknown contribution type
+    contributors_data = {
+        "contributors": [
+            {
+                "name": "John Doe",
+                "contributions": ["code", "unknown_type"],
+            },
+        ]
+    }
+    contributors_file = tmpdir / ".all-contributorsrc"
+    with Path(contributors_file).open("w") as f:
+        json.dump(contributors_data, f)
+
+    # Create a minimal Sphinx environment
+    settings = OptionParser(components=[Parser]).get_default_values()
+    document = new_document("<test>", settings=settings)
+    document.settings.env = sphinx_app.env
+    state_machine = MockStateMachine(document)
+
+    # Create a directive instance with emoji option
+    directive = AllContributorsDirective(
+        name="all-contributors",
+        arguments=[str(contributors_file)],
+        options={"emoji": None},  # Enable emoji option
+        content=StringList([""], source="test"),
+        lineno=0,
+        content_offset=0,
+        block_text="",
+        state=MockState(document),
+        state_machine=state_machine,
+    )
+
+    # Run the directive
+    result = directive.run()
+
+    # Assert that the result is a list containing a bullet_list node
+    assert isinstance(result, list), "Result is not a list"  # noqa: S101
+    assert len(result) == 1, "Result list does not have length 1"  # noqa: S101
+
+    # Assert text content handles unknown type gracefully
+    list_items = result[0].children
+    # For unknown types, no emoji is added, just the type name
+    expected = "John Doe for \U0001f4bb code, unknown_type"
+    assert list_items[0].astext() == expected, (  # noqa: S101
+        "Unknown contribution types should appear without emoji"
+    )

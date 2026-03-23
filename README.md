@@ -14,6 +14,15 @@
 - Contributor Name 2 for code
 ```
 
+## Table of Contents
+
+- [Install](#install)
+- [Usage](#usage)
+- [Features](#features)
+- [Options](#options)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Install
 
 [![pypi](https://img.shields.io/pypi/v/sphinx-all-contributors?label=pypi&logo=python&logoColor=white)](https://pypi.org/project/sphinx-all-contributors/)
@@ -83,6 +92,56 @@ The generated HTML (or other formats) will contain a list of contributors in the
 - Automatically reads the list of contributors from a `.all-contributorsrc` file.
 - Customizable relative path to the `.all-contributorsrc` file.
 - Outputs a list of contributors in a clean, human-readable format.
+- Optional emoji display for contribution types using the `:emoji:` flag.
+- Optional profile links for contributors using the `:profile:` flag.
+
+## Options
+
+The `all-contributors` directive supports the following options:
+
+### `:profile:` flag
+
+Makes contributor names clickable links to their profile URLs (if profile URLs are available in the `.all-contributorsrc` file).
+
+Example:
+
+```rst
+.. all-contributors::
+   :profile:
+```
+
+Output:
+
+```
+- [Contributor Name 1](profile-url) for ideas, docs
+- [Contributor Name 2](profile-url) for code
+```
+
+### `:emoji:` flag
+
+Displays emoji icons before contribution types based on the [all-contributors emoji key](https://allcontributors.org/docs/en/emoji-key).
+
+Example:
+
+```rst
+.. all-contributors::
+   :emoji:
+```
+
+Output:
+
+```
+- Contributor Name 1 for 🤔 ideas, 📖 docs
+- Contributor Name 2 for 💻 code
+```
+
+You can combine both options:
+
+```rst
+.. all-contributors::
+   :profile:
+   :emoji:
+```
 
 ## Contributing
 
