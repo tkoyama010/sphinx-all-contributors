@@ -102,6 +102,7 @@ Example:
 ```
 
 Output:
+
 ```
 - [Contributor Name 1](profile-url) for ideas, docs
 - [Contributor Name 2](profile-url) for code
@@ -119,6 +120,7 @@ Example:
 ```
 
 Output:
+
 ```
 - Contributor Name 1 for 🤔 ideas, 📖 docs
 - Contributor Name 2 for 💻 code
