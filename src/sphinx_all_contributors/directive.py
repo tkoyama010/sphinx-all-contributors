@@ -100,7 +100,7 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
 
         for contributor in all_contributors.get("contributors", []):
             name = contributor.get("name", "Unknown Contributor")
-            contribution_types: list[str] = contributor.get("contributions", [])
+            contribution_types = list(contributor.get("contributions", []))
 
             # Format contributions with optional emoji
             if use_emoji:
