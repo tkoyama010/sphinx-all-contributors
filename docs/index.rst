@@ -23,6 +23,32 @@ The ``:profile:`` option makes contributor names clickable links to their profil
 .. all-contributors:: ../.all-contributorsrc
    :profile:
 
+Using Table Format
+------------------
+
+The ``:table:`` option displays contributors in a table format instead of a bullet list:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :table:
+
+.. all-contributors:: ../.all-contributorsrc
+   :table:
+
+Using Avatar Icons
+------------------
+
+The ``:avatar:`` option displays contributor avatar/profile images from the ``avatar_url`` field:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :avatar:
+
+.. all-contributors:: ../.all-contributorsrc
+   :avatar:
+
 Using Emoji Icons
 -----------------
 
@@ -39,7 +65,27 @@ The ``:emoji:`` option displays emoji icons before contribution types based on t
 Combining Options
 -----------------
 
-You can combine both ``:profile:`` and ``:emoji:`` options:
+You can combine ``:table:``, ``:profile:``, ``:avatar:``, and ``:emoji:`` options:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :table:
+       :profile:
+
+.. all-contributors:: ../.all-contributorsrc
+   :table:
+   :profile:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :profile:
+       :avatar:
+
+.. all-contributors:: ../.all-contributorsrc
+   :profile:
+   :avatar:
 
 .. code-block:: rst
 
@@ -50,4 +96,3 @@ You can combine both ``:profile:`` and ``:emoji:`` options:
 .. all-contributors:: ../.all-contributorsrc
    :profile:
    :emoji:
-
