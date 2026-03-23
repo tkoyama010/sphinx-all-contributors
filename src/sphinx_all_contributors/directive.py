@@ -7,6 +7,42 @@ from typing import ClassVar
 from docutils import nodes  # type: ignore[import-untyped]
 from docutils.parsers.rst import Directive, directives  # type: ignore[import-untyped]
 
+# Standard emoji mapping for all-contributors contribution types
+EMOJI_MAP = {
+    "audio": "🔊",
+    "a11y": "♿️",
+    "bug": "🐛",
+    "blog": "📝",
+    "business": "💼",
+    "code": "💻",
+    "content": "🖋",
+    "data": "🔣",
+    "doc": "📖",
+    "design": "🎨",
+    "example": "💡",
+    "eventOrganizing": "📋",
+    "financial": "💵",
+    "fundingFinding": "🔍",
+    "ideas": "🤔",
+    "infra": "🚇",
+    "maintenance": "🚧",
+    "mentoring": "🧑‍🏫",
+    "platform": "📦",
+    "plugin": "🔌",
+    "projectManagement": "📆",
+    "question": "💬",
+    "research": "🔬",
+    "review": "👀",
+    "security": "🛡️",
+    "tool": "🔧",
+    "translation": "🌍",
+    "test": "⚠️",
+    "tutorial": "✅",
+    "talk": "📢",
+    "userTesting": "📓",
+    "video": "📹",
+}
+
 
 class AllContributorsDirective(Directive):  # type: ignore[misc]
     """Directive to include a list of contributors from a JSON file."""
@@ -15,7 +51,10 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
     required_arguments = 0
     optional_arguments = 1
     has_content = False
-    option_spec: ClassVar[dict[str, object]] = {"profile": directives.flag}
+    option_spec: ClassVar[dict[str, object]] = {
+        "profile": directives.flag,
+        "emoji": directives.flag,
+    }
 
     def run(self) -> list[nodes.Node]:
         """Return a list of nodes to insert into the document."""
@@ -42,10 +81,22 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
 
         # Check if profile option is enabled
         show_profile = "profile" in self.options
+        # Check if emoji option is enabled
+        use_emoji = "emoji" in self.options
 
         for contributor in all_contributors.get("contributors", []):
             name = contributor.get("name", "Unknown Contributor")
-            contributions = ", ".join(contributor.get("contributions", []))
+            contribution_types = contributor.get("contributions", [])
+
+            # Format contributions with optional emoji
+            if use_emoji:
+                contributions_list = [
+                    f"{EMOJI_MAP.get(contrib, '')} {contrib}".strip()
+                    for contrib in contribution_types
+                ]
+            else:
+                contributions_list = contribution_types
+            contributions = ", ".join(contributions_list)
 
             # Create a list item node
             list_item_node = nodes.list_item()
