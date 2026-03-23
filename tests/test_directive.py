@@ -361,7 +361,8 @@ def test_all_contributors_directive_with_avatar(
             "Should contain image node when avatar option is enabled"
         )
         assert (  # noqa: S101
-            first_para.children[0]["uri"] == "https://avatars.githubusercontent.com/u/1?v=4"
+            first_para.children[0]["uri"]
+            == "https://avatars.githubusercontent.com/u/1?v=4"
         ), "Avatar URL should be correct"
         assert first_para.children[0]["alt"] == "John Doe avatar", (  # noqa: S101
             "Avatar alt text should be correct"
@@ -378,7 +379,9 @@ def test_all_contributors_directive_with_avatar(
         assert list_items[0].astext() == "John Doe avatar John Doe for code, doc", (  # noqa: S101
             "First list item text is incorrect with avatar"
         )
-        assert list_items[1].astext() == "Jane Smith avatar Jane Smith for design, test", (  # noqa: S101
+        assert (
+            list_items[1].astext() == "Jane Smith avatar Jane Smith for design, test"
+        ), (  # noqa: S101
             "Second list item text is incorrect with avatar"
         )
     else:
