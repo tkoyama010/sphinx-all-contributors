@@ -22,3 +22,32 @@ The ``:profile:`` option makes contributor names clickable links to their profil
 
 .. all-contributors:: ../.all-contributorsrc
    :profile:
+
+Using Emoji Icons
+-----------------
+
+The ``:emoji:`` option displays emoji icons before contribution types based on the all-contributors emoji key:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :emoji:
+
+.. all-contributors:: ../.all-contributorsrc
+   :emoji:
+
+Combining Options
+-----------------
+
+You can combine both ``:profile:`` and ``:emoji:`` options:
+
+.. code-block:: rst
+
+    .. all-contributors:: ../.all-contributorsrc
+       :profile:
+       :emoji:
+
+.. all-contributors:: ../.all-contributorsrc
+   :profile:
+   :emoji:
+
