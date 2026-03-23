@@ -2,17 +2,15 @@
 
 ## [0.4.0](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.4...sphinx-all-contributors-v0.4.0) (2026-03-23)
 
-
 ### Features
 
-* add :avatar: option to display contributor icons ([#147](https://github.com/tkoyama010/sphinx-all-contributors/issues/147)) ([fbe827d](https://github.com/tkoyama010/sphinx-all-contributors/commit/fbe827dc6be38fc67394f616697560cd8622118d))
-* add :table: option to render contributors as a table ([#146](https://github.com/tkoyama010/sphinx-all-contributors/issues/146)) ([bf88e43](https://github.com/tkoyama010/sphinx-all-contributors/commit/bf88e43509153ce57f750c6796e87e65e147bdaf))
-* add emoji option to display contribution types with emojis ([#148](https://github.com/tkoyama010/sphinx-all-contributors/issues/148)) ([a6d079f](https://github.com/tkoyama010/sphinx-all-contributors/commit/a6d079f18542e16051c42dde5e488e81f65b267b))
-
+- add :avatar: option to display contributor icons ([#147](https://github.com/tkoyama010/sphinx-all-contributors/issues/147)) ([fbe827d](https://github.com/tkoyama010/sphinx-all-contributors/commit/fbe827dc6be38fc67394f616697560cd8622118d))
+- add :table: option to render contributors as a table ([#146](https://github.com/tkoyama010/sphinx-all-contributors/issues/146)) ([bf88e43](https://github.com/tkoyama010/sphinx-all-contributors/commit/bf88e43509153ce57f750c6796e87e65e147bdaf))
+- add emoji option to display contribution types with emojis ([#148](https://github.com/tkoyama010/sphinx-all-contributors/issues/148)) ([a6d079f](https://github.com/tkoyama010/sphinx-all-contributors/commit/a6d079f18542e16051c42dde5e488e81f65b267b))
 
 ### Continuous Integration
 
-* add Conventional Commits workflow for PR title validation ([#149](https://github.com/tkoyama010/sphinx-all-contributors/issues/149)) ([6b33265](https://github.com/tkoyama010/sphinx-all-contributors/commit/6b33265904e95fb4a1417e47bb53ba472e2ccfbd))
+- add Conventional Commits workflow for PR title validation ([#149](https://github.com/tkoyama010/sphinx-all-contributors/issues/149)) ([6b33265](https://github.com/tkoyama010/sphinx-all-contributors/commit/6b33265904e95fb4a1417e47bb53ba472e2ccfbd))
 
 ## [0.3.4](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.3...sphinx-all-contributors-v0.3.4) (2026-03-18)
 
