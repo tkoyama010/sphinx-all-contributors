@@ -15,7 +15,10 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
     required_arguments = 0
     optional_arguments = 1
     has_content = False
-    option_spec: ClassVar[dict[str, object]] = {"profile": directives.flag}
+    option_spec: ClassVar[dict[str, object]] = {
+        "profile": directives.flag,
+        "table": directives.flag,
+    }
 
     def run(self) -> list[nodes.Node]:
         """Return a list of nodes to insert into the document."""
@@ -37,6 +40,17 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
         with Path(contributors_file).open(encoding="utf-8") as f:
             all_contributors = json.load(f)
 
+        # Check if table option is enabled
+        show_table = "table" in self.options
+
+        if show_table:
+            return [self._create_table(all_contributors)]
+        return [self._create_bullet_list(all_contributors)]
+
+    def _create_bullet_list(
+        self, all_contributors: dict[str, list[dict[str, str]]]
+    ) -> nodes.Node:
+        """Create a bullet list node from contributors data."""
         # Create a bullet list node
         list_node = nodes.bullet_list()
 
@@ -66,4 +80,71 @@ class AllContributorsDirective(Directive):  # type: ignore[misc]
             list_item_node += paragraph_node
             list_node += list_item_node
 
-        return [list_node]
+        return list_node
+
+    def _create_table(
+        self, all_contributors: dict[str, list[dict[str, str]]]
+    ) -> nodes.Node:
+        """Create a table node from contributors data."""
+        # Check if profile option is enabled
+        show_profile = "profile" in self.options
+
+        # Create table structure
+        table = nodes.table()
+        tgroup = nodes.tgroup(cols=2)
+        table += tgroup
+
+        # Define column widths
+        tgroup += nodes.colspec(colwidth=1)
+        tgroup += nodes.colspec(colwidth=1)
+
+        # Create table head
+        thead = nodes.thead()
+        tgroup += thead
+
+        # Header row
+        row = nodes.row()
+        entry = nodes.entry()
+        entry += nodes.paragraph(text="Name")
+        row += entry
+
+        entry = nodes.entry()
+        entry += nodes.paragraph(text="Contributions")
+        row += entry
+
+        thead += row
+
+        # Create table body
+        tbody = nodes.tbody()
+        tgroup += tbody
+
+        # Add contributor rows
+        for contributor in all_contributors.get("contributors", []):
+            name = contributor.get("name", "Unknown Contributor")
+            contributions = ", ".join(contributor.get("contributions", []))
+
+            row = nodes.row()
+
+            # Name cell
+            entry = nodes.entry()
+            paragraph_node = nodes.paragraph()
+
+            if show_profile and "profile" in contributor:
+                reference_node = nodes.reference(
+                    "", name, refuri=contributor["profile"]
+                )
+                paragraph_node += reference_node
+            else:
+                paragraph_node += nodes.Text(name)
+
+            entry += paragraph_node
+            row += entry
+
+            # Contributions cell
+            entry = nodes.entry()
+            entry += nodes.paragraph(text=contributions)
+            row += entry
+
+            tbody += row
+
+        return table
