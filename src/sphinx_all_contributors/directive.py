@@ -4,8 +4,8 @@ import json
 from pathlib import Path
 from typing import ClassVar
 
-from docutils import nodes  # type: ignore[import-untyped]
-from docutils.parsers.rst import Directive, directives  # type: ignore[import-untyped]
+from docutils import nodes
+from docutils.parsers.rst import Directive, directives
 
 # Standard emoji mapping for all-contributors contribution types
 EMOJI_MAP = {
