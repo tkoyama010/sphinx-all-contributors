@@ -18,7 +18,7 @@ version = "0.4.0"
 
 [project.optional-dependencies]
 all = ['sphinx-all-contributors[docs]']
-docs = ['myst-parser', 'sphinx-book-theme==1.2.0']
+docs = ['myst-parser', 'sphinx-book-theme==1.4.0']
 
 [dependency-groups]
 dev = [{ include-group = "test" }]
