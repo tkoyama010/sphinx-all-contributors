@@ -1,3 +1,4 @@
+# Copyright (c) 2024 Tetsuo Koyama
 """Directive to include a list of contributors from a JSON file."""
 
 import json

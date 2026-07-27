@@ -1,3 +1,4 @@
+# Copyright (c) 2024 Tetsuo Koyama
 """Test for the sphinx-all-contributors directive."""
 
 import json
