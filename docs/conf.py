@@ -1,4 +1,5 @@
-# Configuration file for the Sphinx documentation builder.  # noqa: INP001, D100
+# Copyright (c) 2024 Tetsuo Koyama  # noqa: INP001, D100
+# Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html

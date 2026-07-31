@@ -1,3 +1,4 @@
+# Copyright (c) 2024 Tetsuo Koyama
 """Sphinx extension for All Contributors."""
 
 from sphinx.application import Sphinx
