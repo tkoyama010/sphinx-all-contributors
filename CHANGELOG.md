@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.4.0...sphinx-all-contributors-v0.4.1) (2026-08-21)
+
+
+### Bug Fixes
+
+* use zizmorcore/zizmor-pre-commit for SEC001 ([b28dc41](https://github.com/tkoyama010/sphinx-all-contributors/commit/b28dc410546dad912a55dfdf40f925570d65d985))
+
 ## [0.4.0](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.3.4...sphinx-all-contributors-v0.4.0) (2026-03-23)
 
 ### Features
