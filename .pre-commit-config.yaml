@@ -105,7 +105,7 @@ repos:
     rev: edcf5d5d60ddb7ad3edb0fbc6c2164fa35e9a8ee
     hooks:
       - id: standard-readme
-  - repo: https://github.com/woodruffw/zizmor-pre-commit
+  - repo: https://github.com/zizmorcore/zizmor-pre-commit
     rev: v1.29.0
     hooks:
       - id: zizmor
