@@ -4,13 +4,15 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+from importlib.metadata import version
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "sphinx-all-contributors"
 copyright = "2024, Tetsuo Koyama"  # noqa: A001
 author = "Tetsuo Koyama"
-release = "0.3.dev0"
+release = version("sphinx-all-contributors")
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
