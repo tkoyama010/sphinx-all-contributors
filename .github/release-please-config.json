@@ -5,6 +5,7 @@
     ".": {
       "release-type": "python",
       "package-name": "sphinx-all-contributors",
+      "include-component-in-tag": false,
       "version-file": "pyproject.toml",
       "changelog-sections": [
         { "type": "feat", "section": "Features" },
