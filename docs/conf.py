@@ -4,13 +4,18 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import importlib.metadata
+
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = "sphinx-all-contributors"
 copyright = "2024, Tetsuo Koyama"  # noqa: A001
 author = "Tetsuo Koyama"
-release = "0.3.dev0"
+try:
+    release = importlib.metadata.version("sphinx-all-contributors")
+except importlib.metadata.PackageNotFoundError:  # pragma: no cover
+    release = "dev"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
