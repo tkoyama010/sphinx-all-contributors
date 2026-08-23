@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.4.1...sphinx-all-contributors-v0.4.2) (2026-08-23)
+
+
+### Bug Fixes
+
+* **docs:** derive release version from package metadata ([#184](https://github.com/tkoyama010/sphinx-all-contributors/issues/184)) ([5e5d16a](https://github.com/tkoyama010/sphinx-all-contributors/commit/5e5d16a163b38977ce86ff635259dc7fd1fa64db))
+
 ## [0.4.1](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.4.0...sphinx-all-contributors-v0.4.1) (2026-08-21)
 
 ### Bug Fixes
