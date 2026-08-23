@@ -4,7 +4,7 @@
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-from importlib.metadata import PackageNotFoundError, version
+import importlib.metadata
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -13,8 +13,8 @@ project = "sphinx-all-contributors"
 copyright = "2024, Tetsuo Koyama"  # noqa: A001
 author = "Tetsuo Koyama"
 try:
-    release = version("sphinx-all-contributors")
-except PackageNotFoundError:  # pragma: no cover
+    release = importlib.metadata.version("sphinx-all-contributors")
+except importlib.metadata.PackageNotFoundError:  # pragma: no cover
     release = "dev"
 
 # -- General configuration ---------------------------------------------------
