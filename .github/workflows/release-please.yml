@@ -26,7 +26,7 @@ jobs:
   publish:
     needs: release-please
     if: needs.release-please.outputs.release_created == 'true'
-    uses: ./.github/workflows/publish-to-pypi.yml
+    uses: $/.github/workflows/publish-to-pypi.yml
     with:
       tag_name: ${{ needs.release-please.outputs.tag_name }}
     permissions:
