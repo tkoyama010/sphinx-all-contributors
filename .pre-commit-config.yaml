@@ -18,7 +18,7 @@ repos:
     hooks:
       - id: codespell
         args: ["-L", ""]
-  - repo: https://github.com/pycqa/pydocstyle
+  - repo: https://github.com/pycqa/pydocstyle # zizmor: ignore[archived-uses]
     rev: 6.3.0
     hooks:
       - id: pydocstyle
