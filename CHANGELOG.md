@@ -2,11 +2,10 @@
 
 ## [0.4.3](https://github.com/tkoyama010/sphinx-all-contributors/compare/v0.4.2...v0.4.3) (2026-09-15)
 
-
 ### Bug Fixes
 
-* **ci:** use GitHub self-repository syntax for reusable workflow ([#190](https://github.com/tkoyama010/sphinx-all-contributors/issues/190)) ([cb9d268](https://github.com/tkoyama010/sphinx-all-contributors/commit/cb9d268af0748830ef418bf17da68fb362bfd8cf))
-* **ci:** use vX.Y.Z tag format so RTD resolves stable ([#186](https://github.com/tkoyama010/sphinx-all-contributors/issues/186)) ([f3cefd0](https://github.com/tkoyama010/sphinx-all-contributors/commit/f3cefd010899cb54e176b9b06b393e976db85dfe))
+- **ci:** use GitHub self-repository syntax for reusable workflow ([#190](https://github.com/tkoyama010/sphinx-all-contributors/issues/190)) ([cb9d268](https://github.com/tkoyama010/sphinx-all-contributors/commit/cb9d268af0748830ef418bf17da68fb362bfd8cf))
+- **ci:** use vX.Y.Z tag format so RTD resolves stable ([#186](https://github.com/tkoyama010/sphinx-all-contributors/issues/186)) ([f3cefd0](https://github.com/tkoyama010/sphinx-all-contributors/commit/f3cefd010899cb54e176b9b06b393e976db85dfe))
 
 ## [0.4.2](https://github.com/tkoyama010/sphinx-all-contributors/compare/sphinx-all-contributors-v0.4.1...sphinx-all-contributors-v0.4.2) (2026-08-23)
 
