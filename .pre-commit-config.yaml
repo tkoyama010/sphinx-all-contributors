@@ -18,12 +18,6 @@ repos:
     hooks:
       - id: codespell
         args: ["-L", ""]
-  - repo: https://github.com/pycqa/pydocstyle # zizmor: ignore[archived-uses]
-    rev: 6.3.0
-    hooks:
-      - id: pydocstyle
-        additional_dependencies: [tomli==2.0.1]
-        files: ^src/sphinx_all_contributors
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v2.3.1
     hooks:
