@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.0](https://github.com/tkoyama010/sphinx-all-contributors/compare/v0.4.3...v0.5.0) (2026-11-26)
+
+### Features
+
+- add Python 3.15 support ([#208](https://github.com/tkoyama010/sphinx-all-contributors/issues/208)) ([aaeca86](https://github.com/tkoyama010/sphinx-all-contributors/commit/aaeca867f1d8ef7847c2ee0fb5b087cbe1daf17f))
+
+### Bug Fixes
+
+- **ci:** use stable Python 3.14 in test matrix ([#206](https://github.com/tkoyama010/sphinx-all-contributors/issues/206)) ([73775be](https://github.com/tkoyama010/sphinx-all-contributors/commit/73775be72253bd436ca93985df1082cdb1cb04d2))
+
 ## [0.4.3](https://github.com/tkoyama010/sphinx-all-contributors/compare/v0.4.2...v0.4.3) (2026-09-15)
 
 ### Bug Fixes
